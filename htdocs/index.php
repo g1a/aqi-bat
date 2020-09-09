@@ -10,7 +10,7 @@ $aqi = $state['aqi'];
 $timestamp = date('Y-m-d h:i A', $state['sensor-read-timestamp']);
 $sensor = $state['sensor-label'];
 
-print "<p>AQI at sensor '$sensor' as of $timestamp: $aqi</p>";
+print "<p>AQI: $aqi</p><p>Time: $timestamp</p><p>Sensor: $sensor</p>";
 
 print "<form method='POST' action='threshold.php'>";
 
