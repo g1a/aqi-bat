@@ -7,7 +7,7 @@ $state = json_decode(file_get_contents($stateFile), true);
 $prefs = json_decode(file_get_contents($prefsFile), true);
 
 $aqi = $state['aqi'];
-$timestamp = date('Y-m-d H:i:s', $state['sensor-read-timestamp']);
+$timestamp = date('Y-m-d h:i A', $state['sensor-read-timestamp']);
 $sensor = $state['sensor-label'];
 
 print "<p>AQI at sensor '$sensor' as of $timestamp: $aqi</p>";
