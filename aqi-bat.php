@@ -72,6 +72,10 @@ if (!empty($data)) {
   $firstSensor = $data['results'][0];
 
   $label = $firstSensor['Label'];
+  $lat = $firstSensor['Lat'];
+  $lon = $firstSensor['Lon'];
+  $sensorUrl = "https://www.purpleair.com/map?opt=1/i/mAQI/a10/cC0#12.82/$lat/$lon";
+
   $aqi = aqiFromPM($firstSensor['PM2_5Value']);
 
   print "AQI at $label is $aqi\n";
@@ -79,6 +83,7 @@ if (!empty($data)) {
   $state['aqi'] = $aqi;
   $state['sensor-read-timestamp'] = time();
   $state['sensor-label'] = $label;
+  $state['sensor-url'] = $sensorUrl;
 
   $sound = false;
 

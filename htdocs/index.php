@@ -9,8 +9,9 @@ $prefs = json_decode(file_get_contents($prefsFile), true);
 $aqi = $state['aqi'];
 $timestamp = date('Y-m-d h:i A', $state['sensor-read-timestamp']);
 $sensor = $state['sensor-label'];
+$purpleAirUrl = $state['sensor-url'];
 
-print "<p>AQI: $aqi</p><p>Time: $timestamp</p><p>Sensor: $sensor</p>";
+print "<p>AQI: $aqi</p><p>Time: $timestamp</p><p>Sensor: <a href='$purpleAirUrl'>$sensor</a></p>";
 
 print "<form method='POST' action='threshold.php'>";
 
