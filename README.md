@@ -93,3 +93,7 @@ load-module module-native-protocol-unix auth-anonymous=1
 ```
 /usr/bin/env XDG_RUNTIME_DIR="/run/user/1000" mpg123 examples/sounds/test.mp3
 ```
+
+## About the Name
+
+AQI-Bat was written to run on a small black network computer purchased to run our home network. This computer and was originally mounted upside down underneath a high shelf, and given its size, color, position and purpose was given the name "bat-net". Bat-net provides DHCP and DNS services, and names devices on the local subnet `.bat` rather than `.local`. The AQI server was therefore assigned the name `aqi.bat`, and the project that runs it was named similarly.
