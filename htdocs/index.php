@@ -11,7 +11,7 @@ $timestamp = date('Y-m-d h:i A', $state['sensor-read-timestamp']);
 $sensor = $state['sensor-label'];
 $purpleAirUrl = $state['sensor-url'];
 
-print "<p>AQI: $aqi</p><p>Time: $timestamp</p><p>Sensor: <a href='$purpleAirUrl'>$sensor</a> | <a href='https://www.airnow.gov/?reportingArea=San%20Francisco&stateCode=CA&fbclid=IwAR1Q86uWF6VaZgj4TKNrG3ExGRKHu-8Q2qrVyWJkwLtJLHFIDomSBpQn9pg'>Air Now forcast</a> | <a href='https://napsg.maps.arcgis.com/apps/webappviewer/index.html?id=6dc469279760492d802c7ba6db45ff0e&fbclid=IwAR1Q86uWF6VaZgj4TKNrG3ExGRKHu-8Q2qrVyWJkwLtJLHFIDomSBpQn9pg'>Fire map</a></p>";
+print "<p>AQI: $aqi</p><p>Time: $timestamp</p><p>Sensor: <a href='$purpleAirUrl'>$sensor</a> | <a href='https://www.iqair.com/us/usa/california/brisbane?utm_source=homepage_-usa-california-brisbane'>Air IQ</a> | <a href='https://napsg.maps.arcgis.com/apps/webappviewer/index.html?id=6dc469279760492d802c7ba6db45ff0e&fbclid=IwAR1Q86uWF6VaZgj4TKNrG3ExGRKHu-8Q2qrVyWJkwLtJLHFIDomSBpQn9pg'>Fire map</a></p>";
 
 print "<form method='POST' action='threshold.php'>";
 
