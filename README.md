@@ -26,9 +26,18 @@ Some notes:
 
 1. The example schedule runs the script once every ten minutes. Adjust to suit, but do note that the purple air API has a rate limit that will throttle you if you send too many requests.
 2. The sensor URL is written in the prefs.json file in the configuration directory. The configuration directory will be created at $HOME/.aqi-bat on the first run of the tool.
-3. To find the URL of a different session to use, click on the desired sensor, click on "Get This Widget", and then copy the URL from the "JSON" link in the popup. Put this link in the `'sensor-url'` item in the preferences file.
+3. To find the URL of a different sensor to use, first focus on an area of the Purple Air map that has the sensor that you are interested in. Click on the download button shown in the screenshot below.
 
-![Purple Air Sensor Info](docs/img/purple-air-sensor-info.png)
+![Purple Air Download Button](docs/img/purple-air-download-btn.png)
+
+4. That button will bring you to the download tool, shown below. Right click on the "Show on Map" link and copy it to the clipboard.
+
+![Purple Air Download Tool](docs/img/purple-air-download-tool.png)
+
+5. Paste the URL into the `sensor-url` entry in the prefs.json file. An example URL is shown below.
+```
+https://www.purpleair.com/map?lat=37.6834&lng=-122.406137&zoom=14&show=53461
+```
 
 ### Web Server
 
