@@ -43,7 +43,7 @@ https://www.purpleair.com/map?lat=37.6834&lng=-122.406137&zoom=14&show=53461
 
 Make a symbolic link from your web server directory to the `htdocs` directory in this project.
 ```
-ln -s '/path/to/aqi-bat/htdocs' '/var/www/aqi-bat'
+ln -s '/path/to/aqi-bat/htdocs' '/var/www/aqi.bat/htdocs'
 ```
 This project is just a hack, so you'll have to hand-modify the index.php and threshold.php files to point at the configuration directory created by the cron script.
 
@@ -51,7 +51,7 @@ Configure your web server to serve files from this directory. See the [example A
 
 Make sure that the web server can write to the configuration files:
 ```
-chown -R www-data $HOME/.aqi-bat
+sudo chgrp -R www-data $HOME/.aqi-bat
 ```
 
 ### PulseAudio
@@ -69,7 +69,6 @@ autospawn = no
 ```
 sudo systemctl --global disable pulseaudio.service pulseaudio.socket
 ```
-I'm not sure if this did anything; pulseaudio might not have been configured in systemd on my system (Ubuntu 18.04). The command above did run without producing an error, though.
 
 #### Create a pulseadio systemd service for system mode
 
@@ -86,16 +85,17 @@ ExecStart=/usr/bin/pulseaudio --daemonize=no --system --realtime --log-target=jo
 WantedBy=multi-user.target
 ```
 
-#### Enable the pulseaudio systemd service 
-``` 
-systemctl --system enable pulseaudio.service
-systemctl --system start pulseaudio.service
-```
 #### Allow anonymous users to use sound
 
 In vi /etc/pulse/system.pa:
 ```
 load-module module-native-protocol-unix auth-anonymous=1
+```
+
+#### Enable the pulseaudio systemd service 
+``` 
+systemctl --system enable pulseaudio.service
+systemctl --system start pulseaudio.service
 ```
 
 #### Play a test sound
